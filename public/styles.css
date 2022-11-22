@@ -2,7 +2,7 @@ body {
     background-color: black;
     text-align: center;
     color: black;
-    background-image: url(https://i.imgur.com/YTWRt9e.jpg);
+    background-image: url(https://img.freepik.com/free-vector/animals-theme-template-illustration_53876-62836.jpg?size=626&ext=jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -12,3 +12,18 @@ body {
 
 }
 
+h1 {
+    text-align: center;
+    color: black;
+    font-style:italic;
+    font-weight: 1000;
+}
+h2 {
+    color: antiquewhite;
+    color: black;
+    font-style:italic;
+    /* font-weight: 1000; */
+}
+h3 {
+    color: black;
+}
