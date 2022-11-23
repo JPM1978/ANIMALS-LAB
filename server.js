@@ -110,7 +110,7 @@ app.get("/animals/:id/edit", (req, res) => {
     const id = req.params.id
     // get the animal from the database
     Animal.findById(id, (err, animal) => {
-        // render template and send it fruit
+        // render template and send the animal
         res.render("animals/edit.ejs", {animal})
     })
   })
@@ -123,6 +123,7 @@ app.put("/animals/:id", (req, res) => {
     req.body.extinct = req.body.extinct === "on" ? true : false
     // update the animal
     Animal.findByIdAndUpdate(id, req.body, {new: true}, (err, animal) => {
+        console.log(err, animal)
         // redirect user back to main page when animal 
         res.redirect("/animals")
     })

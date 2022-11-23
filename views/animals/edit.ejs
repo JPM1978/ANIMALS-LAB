@@ -13,6 +13,7 @@
                 SPECIES:<input
                   type="text"
                   name="species"
+                  value="<%= animal.species %> "
                   placeholder="enter an animal(s) name"
                 />
               </label>
@@ -20,6 +21,7 @@
                 LOCATION:<input
                   type="text"
                   name="location"
+                  value="<%= animal.location %> "
                   placeholder="enter a geographic location"
                 />
               </label>
@@ -27,14 +29,19 @@
                   LIFE EXPECTANCY:<input
                     type="number"
                     name="lifeExpectancy"
+                    value=<%= parseInt(animal.lifeExpectancy) %> 
                     placeholder="enter a number in years"
                   />
                 </label>
               <label>
-                EXTINCT: <input type="checkbox" name="extinct" />
+                EXTINCT: <input 
+                type="checkbox" 
+                name="extinct" 
+                <%= animal.extinct ? "checked" : "" %> 
+                />
               </label>
           </fieldset>
-          <input type="submit" value="Update <%= animal.name %>" />
+          <input type="submit" value="Update <%= animal.species %>" />
         </form>
         <a href="/animals/"><button>Back to Main</button></a>
       </div>
