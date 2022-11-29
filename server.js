@@ -129,6 +129,7 @@ app.put("/animals/:id", (req, res) => {
     })
   })
   
+  // Delete
   app.delete("/animals/:id", (req, res) => {
     // get the id from params
     const id = req.params.id
