@@ -60,10 +60,12 @@ app.use(express.static("public")) // serve files from public statically
 ////////////////////////////////////////////
 // Routes
 ////////////////////////////////////////////
-app.get("/", (req, res) => {
-    res.send("your server is running... better catch it.")
-  })
-
+// app.get("/", (req, res) => {
+//     res.send("your server is running... better catch it.")
+//   })
+  app.get('/', (req, res) => {
+    res.redirect('/animals')
+})
 
   app.get("/animals/seed", (req, res) => {
 
