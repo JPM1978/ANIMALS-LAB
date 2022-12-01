@@ -87,6 +87,10 @@ app.get("/", (req, res) => {
     });
   });
 
+  app.get('/', (req, res) => {
+    res.redirect('/animals')
+})
+
 
 // index route
 app.get("/animals", (req, res) => {
