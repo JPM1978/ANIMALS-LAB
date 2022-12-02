@@ -125,7 +125,9 @@ app.put("/animals/:id", (req, res) => {
     Animal.findByIdAndUpdate(id, req.body, {new: true}, (err, animal) => {
         console.log(err, animal)
         // redirect user back to main page when animal 
-        res.redirect("/animals")
+        console.log("Getting ready to send") 
+        res.redirect("/animals/")
+       
     })
   })
   
