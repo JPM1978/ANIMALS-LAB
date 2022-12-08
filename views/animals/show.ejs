@@ -13,7 +13,7 @@
           <h3><%= "Life Expectancy:"%> <%= animal.lifeExpectancy + " yrs"%></h3>
           <h3><%= "Extinct:"%> <%= animal.extinct %></h3>
 
-          <!-- <img src="/public/images/image1t.jpg" width="100" height="100" />  -->
+          <img src="<%= animal.img %> " width="100" height="100" /> 
 
 
           <a href="/animals/<%= animal._id %>/edit"><button>Edit</button></a>

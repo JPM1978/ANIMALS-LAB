@@ -6,7 +6,7 @@ const express = require("express") // import express
 const morgan = require("morgan") //import morgan
 const methodOverride = require("method-override")
 const mongoose = require("mongoose") // gives us that db connection and cool methods for CRUD to the database
-
+const cors = require('cors')
 const PORT = process.env.PORT
 
 const app = express()
@@ -43,7 +43,8 @@ const animalsSchema = new Schema({
     species: String,
     location: String,
     extinct: Boolean,
-    lifeExpectancy: Number
+    lifeExpectancy: Number,
+    img:String
 })
 
 // make animal model
@@ -56,6 +57,7 @@ app.use(morgan("tiny")) //logging
 app.use(methodOverride("_method")) // override for put and delete requests from forms
 app.use(express.urlencoded({extended: true})) // parse urlencoded request bodies
 app.use(express.static("public")) // serve files from public statically
+app.use(cors())
 
 ////////////////////////////////////////////
 // Routes
@@ -121,9 +123,16 @@ app.put("/animals/:id", (req, res) => {
     const id = req.params.id
     // check if the extinct property should be true or false
     req.body.extinct = req.body.extinct === "on" ? true : false
+    console.log(req.body, "this is the form body");
+    
+
+
+
     // update the animal
     Animal.findByIdAndUpdate(id, req.body, {new: true}, (err, animal) => {
-        console.log(err, animal)
+      // animal.img = req.body['Insert Image']
+        console.log(animal)
+        console.log(err, "this is the error")
         // redirect user back to main page when animal 
         console.log("Getting ready to send") 
         res.redirect("/animals/")

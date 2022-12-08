@@ -42,21 +42,28 @@
               </label>
           </fieldset>
           <input type="submit" value="Update <%= animal.species %>" />
-          <input type= "file"  name = "Insert Image" accept = "image/gif, image/jpeg, image/png" />
+          <input type= "text"  name = "img" value="<%= animal.img %> " required />
           <a href="/animals/"><button>Back to Main</button></a>
-          
+          <button onclick="execute">Test</button>
+
           <a href="/animals/<%=animal._id %> "><button>Back</button></a>
         </form>
-        <!-- <script type="text/javascript">
+        <script>
+          function execute() {
+              console.log('execute called');
+          }
+        </script>
+        <script type="text/javascript">
           $(document).ready(function()
            {    
-         $("a").click(function(event)
+         $("button").click(function(event)
           {            
            event.preventDefault();
+              console.log(this.animal)
               console.log('event fired');
           });
            });
-        </script> -->
+        </script>
       </div>
     </main>
   </body>
